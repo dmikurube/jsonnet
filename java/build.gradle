@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+processResources {
+    from("${rootProject.projectDir}/../stdlib/std.jsonnet") {
+        into "org.jsonnet"
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+            include 'org/jsonnet/*.java'
+            include 'org/jsonnet/desugarer/*.java'
+            include 'org/jsonnet/lexer/*.java'
+            include 'org/jsonnet/parser/*.java'
+            include 'org/jsonnet/vm/*.java'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+            include 'org/jsonnet/*.java'
+            include 'org/jsonnet/desugarer/*.java'
+            include 'org/jsonnet/lexer/*.java'
+            include 'org/jsonnet/parser/*.java'
+        }
+    }
+}

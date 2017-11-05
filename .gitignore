@@ -6,9 +6,11 @@
 **/.*.swp
 **/.*.swo
 **/*.o
+**/*.class
 *.dSYM
 
 jsonnet
+!java/**/org/jsonnet
 _jsonnet.so
 libjsonnet.so
 libjsonnet++.so

@@ -1,0 +1,7 @@
+java_library(
+    name = "jsonnet",
+    srcs = glob(["src/main/java/org/jsonnet/ast/*.java",
+                 "src/main/java/org/jsonnet/lexer/*.java",
+                 "src/main/java/org/jsonnet/static_error/*.java",
+                ]),
+)
